@@ -1,5 +1,5 @@
 // updating all costings [memory, storage, delivery]
-function getMemoryCost(costOf,costing){
+function getCostings(costOf,costing){
     const amountDisplay =  document.getElementById(costOf + '-cost');
     let totalAmount = amountDisplay.innerText;
     totalAmount = costing;
@@ -41,40 +41,48 @@ function getPromoCode(){
 
 // handling memory cost buttons
 document.getElementById('memory-8gb').addEventListener('click', function(){
-    getMemoryCost('memory',0);
+    const cost = 0; // for memory cost of $0
+    getCostings('memory',cost);
     getTotalPrice();
 })
 document.getElementById('memory-16gb').addEventListener('click', function(){
     // debugger;
-    getMemoryCost('memory',180);
+    const cost = 180; // for memory cost of $180
+    getCostings('memory',cost);
     getTotalPrice();
 })
 
 // handling storage cost buttons
 document.getElementById('storage-256gb').addEventListener('click', function(){
-    getMemoryCost('storage',0);
+    const cost = 0; // for storage cost of $0
+    getCostings('storage',cost);
     getTotalPrice();
 })
 document.getElementById('storage-512gb').addEventListener('click', function(){
-    getMemoryCost('storage',100);
+    const cost = 100; // for storage cost of $100
+    getCostings('storage',cost);
     getTotalPrice();
 })
 document.getElementById('storage-1tb').addEventListener('click', function(){
-    getMemoryCost('storage',180);
+    const cost = 180; // for storage cost of $180
+    getCostings('storage',cost);
     getTotalPrice();
 })
 
 
 // handling delivery cost buttons
 document.getElementById('free-delivery').addEventListener('click', function(){
-    getMemoryCost('delivery',0);
+    const cost = 0; // for free delivery
+    getCostings('delivery',cost);
     getTotalPrice();
 })
 document.getElementById('charged-delivery').addEventListener('click', function(){
-    getMemoryCost('delivery',20);
+    const cost = 20; // for delivery cost of $20
+    getCostings('delivery',cost);
     getTotalPrice();
 })
 
+// handling promo code button
 document.getElementById('PC-apply-btn').addEventListener('click', function(){
     getPromoCode();
 })
